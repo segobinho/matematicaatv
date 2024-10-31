@@ -1,8 +1,7 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MatrixOperations from './page/exercicio1/index';
-import EquationSolver from './page/exercicio2/index'; // Importando o novo componente
+import EquationSolver from './page/exercicio2/index'; 
 import SolucionadorEquacoes from './page/exercicio3';
 
 function App() {
@@ -23,8 +22,8 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<MatrixOperations />} />
-          <Route path="/linear-systems" element={<EquationSolver />} /> {/* Nova rota */}
-          <Route path="/linear-systemss" element={<SolucionadorEquacoes />} /> {/* Nova rota */}
+          <Route path="/linear-systems" element={<EquationSolver />} /> 
+          <Route path="/linear-systemss" element={<SolucionadorEquacoes />} /> 
         </Routes>
       </div>
     </Router>

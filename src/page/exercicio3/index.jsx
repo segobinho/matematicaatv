@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import * as math from 'mathjs';
 
 const SolucionadorEquacoes = () => {
-  // Definindo os sistemas de equações
   const sistemas = [
     { label: 'Sistema (a)', A: [[1, 2, -1], [2, -1, 3], [3, 3, -2]], b: [2, 9, 3] },
     { label: 'Sistema (b)', A: [[1, 1, 0], [1, 0, -1], [0, 1, -1]], b: [10, 5, 3] },
@@ -18,7 +17,7 @@ const SolucionadorEquacoes = () => {
   const resolverSistema = (index) => {
     const sistema = sistemas[index];
     if (sistemaAtivo === index) {
-      setSistemaAtivo(null); // Fechar se já está ativo
+      setSistemaAtivo(null); 
       return;
     }
     const novaSolucao = resolverSistemas(sistema);
@@ -32,11 +31,9 @@ const SolucionadorEquacoes = () => {
 
   const resolverSistemas = (sistema) => {
     try {
-      // Calcular a decomposição LU
       const LU = math.lusolve(sistema.A, sistema.b);
       const solucao = LU.map((v) => v[0].toFixed(2));
 
-      // Montar a string de cálculo detalhado
       const detalhes = `
         Matriz A: ${JSON.stringify(sistema.A)} \n
         Vetor b: ${JSON.stringify(sistema.b)} \n
